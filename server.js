@@ -2,6 +2,7 @@ const express= require('express');
 const hbs= require('hbs');
 const fs= require('fs');
 
+
 var app= express();
 
 hbs.registerPartials(__dirname + '/views/partials');
@@ -46,4 +47,9 @@ app.get('/about',(req,res) => {
     });
 });
 
+app.get('/projects',(req,res) => {
+    res.render('projects.hbs',{
+        pageTitle:'Projects'
+    });
+});
 app.listen(3000);
